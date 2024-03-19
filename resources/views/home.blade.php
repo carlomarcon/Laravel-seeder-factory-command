@@ -16,7 +16,11 @@
       <img src="{{ $item->image }}" class="card-img-top" alt="{{ $item->name }}">
       <div class="card-body">
         <h5 class="card-title">{{ $item->name }}</h5>
+        <div class="mb-1">
+        <span class="badge rounded-pill bg-warning">{{ $item->category->label }}</span>
+      </div>
         <a href="{{ route('product',['id'=>$item->id]) }}" class="btn btn-primary">Vai all'articolo</a>
+     
       </div>
     </div>
     @endforeach
