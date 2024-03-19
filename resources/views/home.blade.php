@@ -10,9 +10,18 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1 class="my-5">Featured products project</h1>
+    <div class="container d-flex justify-content-center flex-wrap p-5 gap-2">
+    @foreach ($all_products as $item)
+    <div class="card" style="width: 18rem;">
+      <img src="{{ $item->image }}" class="card-img-top" alt="{{ $item->name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ $item->name }}</h5>
+        <a href="{{ route('product',['id'=>$item->id]) }}" class="btn btn-primary">Vai all'articolo</a>
+      </div>
     </div>
+    @endforeach
+   </div>
+ 
   </body>
 
 </html>
